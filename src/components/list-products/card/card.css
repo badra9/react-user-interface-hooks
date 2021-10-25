@@ -1,0 +1,61 @@
+.card{
+    margin-right: 15px;
+    margin-bottom: 20px;
+    background: white;
+    border-radius: 6px;
+    overflow: hidden;
+    width: 202px;
+    height: 250px;
+    border: 1px solid #EEE;
+}
+.card .img-container{
+    height: 202px;
+    border-top-right-radius: 6px;
+    border-top-left-radius: 6px;
+    /* overflow: hidden;  */
+    background-color: rgba(228, 155, 155, .65);
+}
+.card .card-icons{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 12px
+}
+.card .card-icons .like-product{
+    cursor: pointer;
+}
+.card .card-icons .add-to-cart{
+    cursor: pointer;
+    color: #2196f3;
+}
+.card .card-text{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 65px; 
+    background: linear-gradient(0deg, white 40%, transparent 100%);
+    transform: translateY(-60px);
+    transition: all .7s ease-in-out;
+    opacity: 0;
+}
+.card .card-text span{
+    background-color: #2196f3;
+    padding: 3px;
+    border-radius: 4px;
+    color: white;
+    font-weight: bold;
+}
+.card:hover .card-text{
+    transform: translateY(-90px);
+    opacity: 1;
+}
+.card .img-container img{
+    transition: all .7s ease-in-out;
+}
+.card:hover .img-container img{
+    transform: scale(1.08);
+}
+.card-container-mvt{
+    width: 65%;
+}

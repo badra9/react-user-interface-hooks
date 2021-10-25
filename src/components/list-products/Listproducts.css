@@ -1,0 +1,125 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    overflow-x: hidden;
+    /* 
+      .container{
+          overflow-x: hidden;
+      }
+      cette instruction a posé un pb.
+      si on choisit  quelques produits, puis
+      on fait une recherche par exemple 'rou' 
+      et on choisit 3 autres produits
+      alors on aura un pb de défilement.
+      ce pb est résolu lorsqu'on fait supprime l'instruction overflow de 
+      la classe .container, mais ça produit une barre de défilement horizontale
+
+      la solution adéquate est de faire 'overflow-x: hidden' dans le body
+
+    */
+}
+.img-respensive{
+    height: 100%;
+    width: 100%;
+}
+.global-container{
+    width: 85%;
+    margin: 50px auto;
+}
+.title{
+    margin-bottom: 20px;
+    padding: 0 10px 0 0;
+}
+.filter-name, .filter-price{
+    padding: 0 5px;
+}
+.global-container .filter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.global-container .filter input{
+    padding: 6px;
+    margin-top: 9px;
+    outline: none;
+    border: 1px solid #2196f3;
+    border-radius: 6px;
+}
+.container{
+    width: 100%;
+    display: flex;
+    /* overflow-x: hidden; */
+    /* overflow-y: scroll; */
+    position: relative;
+}
+
+.card-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    transition: all .8s ease-in-out;
+}
+.card-container p.aucun-produit{
+    padding: 8px 20px;
+    background-color: rgba(228, 155, 155, .65);
+    border-radius: 6px;
+    margin-top: 20px;
+    color: #1c0202;
+    font-size: 25px;
+    animation: alertAnim 1s 1 ease-in-out;  
+}
+
+@keyframes alertAnim{
+    0%{
+      transform: translateY(-20px);
+      opacity: .3;
+    }
+    50%{
+      transform: translateY(20px);
+      opacity: .6;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+      }
+  }
+
+.shopping-cart{
+    background-color: rgba(228, 155, 155, .65);
+    position: absolute;
+    right: -1px;
+    width: 35%; 
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 6px;
+
+    transform: translateX(100%);
+    opacity: 0;
+    transition: all .8s ease-in-out;
+}
+.shopping-cart .panier{
+    /* box-shadow: 2px 4px 4px 0px rgb(0 0 0 / 75%); */
+    box-shadow: 0px 2px 0px 0px rgb(0 0 0 / 75%);
+}
+.shopping-cart .list-item{
+    max-height: 420px;
+    overflow-y: scroll;
+}
+.shopping-cart .list-item::-webkit-scrollbar{ /* attention cette prop n'est pas standard */
+    display: none;
+}
+.shopping-cart-mvt{
+    transform: translateX(0);
+    opacity: 1;
+}
+.shopping-cart  h2{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
